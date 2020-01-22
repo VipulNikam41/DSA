@@ -1,0 +1,14 @@
+You will be given with a file which contains one integer per line. Your program should take as input the name of a file as a command-line argument. The output should be written to a file named ‘output.txt’ which should contain only 5 lines of data:
+
+    The first line should contain the number of numbers in the file, 
+
+    The second line should contain the minimum number present in the file
+
+    The third line should contain the maximum number present in the file
+
+    The fourth line should contain the sum of the numbers
+
+    The fifth line should contain the average of numbers - upto two decimal points.
+
+
+Please use either C or C++ for solving this problem.

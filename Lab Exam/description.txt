@@ -1,0 +1,14 @@
+QUESTION 1 : 
+Number of vertices are calculated by cal_size() function which will identify unique elements from array.
+QUESTION 2 : 
+at the time of taking input for every 2 input variable E is get ++ so that it will calculate no. of edges.
+QUESTION 3 : 
+Map is created which has key at first value and second is array which will contain its value. size of vector is minimized to get minimum degree of graph.
+QUESTION 4 : 
+size of vector is maximized to get minimum degree of graph.
+QUESTION 5 : 
+Number of edges per variable are calculated in BFS() function and its minimized is stored in rad. which is radius of graph.
+QUESTION 6 : 
+its maximization is stored in dia which is diameter of graph.
+QUESTION 7 : 
+through every element in map one element is called through its vector. and then it calls next element via recurtion. end when valu equals its first valut no. of steps clculated for each element in val[]. and then it is minimized to get girth. 

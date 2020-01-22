@@ -1,0 +1,112 @@
+while(t>=0){
+	int cu=0;
+	int cr=0;
+	int cl=0;
+	int cd=0;
+     index = nearest_tree(tr,x1,y1,min,k);
+     if(index<0)
+     {
+     	break;
+     } 
+    
+     int incr = 0;
+		//move left or light
+		
+		int val1 = tr[index].x-x1;
+		if(val1>=0)
+		{
+			if(t>=abs(val1)){
+				for(int j=0;j<abs(val1);j++){
+					cout<<"move right"<<endl;
+					incr++;
+				}
+			}
+			else{
+				for(int j=0;j<t;j++){
+					cout<<"move right"<<endl;
+					incr++;
+				}
+			}	
+		}
+	    else{
+	    	if(t>=abs(val1)){
+				for(int j=0;j<abs(val1);j++){
+					cout<<"move left"<<endl;
+					incr++;
+				}
+			}
+			else{
+				for(int j=0;j<t;j++){
+					cout<<"move left"<<endl;
+					incr++;
+				}
+			}	
+	    }
+	    int val2 = tr[index].y-y1;
+		if(val2>=0){
+			if(t>abs(val2)){
+				for(int j=0;j<abs(val2);j++){
+					cout<<"move up"<<endl;
+					incr++;
+				}
+			}
+			else{
+				for(int j=0;j<t;j++){
+					cout<<"move up"<<endl;
+					incr++;
+				}
+			}	
+		}
+	    else{
+	    	if(t>abs(val2)){
+				for(int j=0;j<abs(val2);j++){
+					cout<<"move down"<<endl;
+					incr++;
+				}
+			}
+			else{
+				for(int j=0;j<t;j++){
+					cout<<"move down"<<endl;
+					incr++;
+				}
+			}	
+	    }
+	 t=t-incr;
+	 x1=tr[index].x;
+     y1=tr[index].y;
+     vector<int> v;
+     v.push_back(cut_up(tr,index,k));
+     v.push_back(cut_down(tr,index,k));
+     v.push_back(cut_right(tr,index,k));
+     v.push_back(cut_left(tr,index,k));
+     int pf;
+     pf = gain(v);
+    // cout<<pf<<endl;
+
+     if(t-tr[index].d>=0){
+	     switch(pf)
+	     {
+	     	case 0:
+	     	  	cout<<"cut up"<<endl;
+	     	  	assign_up_cut(tr,index,k);
+	     	  	break;
+	     	case 1:
+		     	cout<<"cut down"<<endl;
+		     	assign_down_cut(tr,index,k);
+		     	break;
+	     	case 2:
+	     	   cout<<"cut right"<<endl;
+	     	   assign_right_cut(tr,index,k);
+	     	   break;
+	     	case 3:
+	     	  	cout<<"cut left"<<endl;
+	     	   	assign_left_cut(tr,index,k);
+	     	   	break;
+	     }
+	    // tr[index].cut =1;
+	  }
+     v.resize(0);
+     //cout<<t<<endl;
+     t=t-tr[index].d;
+	}
+}
